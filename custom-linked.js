@@ -8,24 +8,32 @@ class LinkedList {
   push(val) {
     let node = new Node(val,)
     let current = this.head
-    console.log("ooo")
+    if (!current){
+      this.head = node
+      return undefined
+    }
     while(current){
       if (current.next ){
         current = current.next
       }else{
         current.next =  node
+        break;
       }
     }
     
   }
 
-  unshift() {
+  unshift(val) {
     this.head =  new Node(val,this.head)
 
   }
 
   log(){
-    console.log(this.head)
+    let current =this.head
+    while(current){
+      console.log(current.val)
+      current = current.next
+    }
   }
 
 
@@ -36,12 +44,18 @@ class Node {
     this.val = val
     this.next = next
   }
+
+
 }
 
 
 let l = new LinkedList()
 l.push(10)
 l.push(20)
+l.push(30)
+l.push(40)
+
+l.unshift(100)
 
 
 
