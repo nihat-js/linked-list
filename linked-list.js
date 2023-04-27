@@ -79,6 +79,19 @@ class LinkedList {
     return result
   }
 
+  findMiddle_() {
+    let current = this.head
+    let now = 1
+    let main = this.size % 2 == 1 ? Math.floor(this.size / 2) : this.size / 2 + 1
+    while (current) {
+      if (main == now) {
+        return current.data
+      }
+      now++
+      current = current.next
+    }
+  }
+
   converBinaryToInteger() {
     let result = 0
     let current = this.head
@@ -88,27 +101,27 @@ class LinkedList {
       current = current.next
     }
 
-    for (let i=arr.length-1;i>=0 ; i--){
-      result+= arr[i] * Math.pow(2,i)
+    for (let i = arr.length - 1; i >= 0; i--) {
+      result += arr[i] * Math.pow(2, i)
     }
 
-    console.log("arr" , arr,result)
+    console.log("arr", arr, result)
 
     return result
 
 
   }
 
-  converBinaryToInteger_(){
+  converBinaryToInteger_() {
     let result = 0
     let current = this.head
     let iterator = 0
-    while(current){
-      result += current.data * Math.pow(2,this.size - iterator -1)
+    while (current) {
+      result += current.data * Math.pow(2, this.size - iterator - 1)
       current = current.next
       iterator++
     }
-    return result 
+    return result
   }
 
 }
@@ -122,18 +135,20 @@ class Node {
 
 
 const ll = new LinkedList()
-ll.insertFirst(1)
-ll.insertFirst(0)
-ll.insertFirst(0)
-ll.insertFirst(1)
+ll.insertFirst(15)
+ll.insertFirst(35)
+ll.insertFirst(55)
+ll.insertFirst(75)
 // ll.insertLast(0)
 // ll.insertLast(1)
 // ll.insertLast(1)
 // ll.insertLast(1)
 
-// console.log(ll.findMiddle())
 // ll.converBinaryToInteger()
-console.log (ll.converBinaryToInteger_())
+// console.log(ll.converBinaryToInteger_())
+
+console.log(ll.findMiddle())
+console.log(ll.findMiddle_())
 
 // ll.log()
 // ll.isPalindrome()
