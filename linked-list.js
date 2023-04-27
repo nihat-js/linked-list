@@ -46,7 +46,7 @@ class LinkedList {
       current = current.next
     }
 
-    if (x.length == 2) {
+    if (x.length <= 2) {
       // console.log("falsy")
       return false
     }
@@ -139,10 +139,8 @@ ll.insertFirst(15)
 ll.insertFirst(35)
 ll.insertFirst(55)
 ll.insertFirst(75)
-// ll.insertLast(0)
-// ll.insertLast(1)
-// ll.insertLast(1)
-// ll.insertLast(1)
+
+
 
 // ll.converBinaryToInteger()
 // console.log(ll.converBinaryToInteger_())
